@@ -18,7 +18,7 @@ function startGame() {
   revealedCount = 0;
   score = 0;
   updateScore();
-  statusText.textContent = "Boa sorte, Pablo!";
+  statusText.textContent = "Boa sorte, Guerreiro!";
   defineDificuldade();
   generateBoard();
 }
@@ -89,7 +89,7 @@ function updateScore() {
 
 function endGame(won) {
   gameOver = true;
-  statusText.textContent = won ? 'Você venceu! 💎' : `O Pablo deu a bunda 💥 perdeu R$${score.toFixed(2).replace('.', ',')}`;
+  statusText.textContent = won ? 'Você venceu! 💎' : `se fudeu 💥você perdeu R$${score.toFixed(2).replace('.', ',')}`;
   board.forEach((cell, i) => {
     if (cell.bomb && !cell.revealed) {
       const cellEl = gameBoard.children[i];
