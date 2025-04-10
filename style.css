@@ -1,0 +1,143 @@
+/* Estilização geral do body com efeito de mar */
+body {
+    font-family: Arial, sans-serif;
+    /* Fundo com gradiente que lembra o oceano */
+    background: linear-gradient(180deg, #2980b9 0%, #6dd5fa 100%);
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+  }
+  
+  /* Cabeçalho com efeito semitransparente e sombra */
+  header {
+    background: rgba(0, 0, 0, 0.6);
+    color: #fff;
+    width: 100%;
+    text-align: center;
+    padding: 1rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+  }
+  
+  /* Controles com layout centralizado e espaçamento */
+  .controls {
+    margin: 1rem 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+  }
+  
+  .controls select,
+  .controls button {
+    padding: 0.5rem;
+    font-size: 1rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+  
+  /* Estilo para botões de controle */
+  .controls button {
+    background: #fff;
+    color: #333;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+  }
+  .controls button:hover {
+    background: #e2e2e2;
+  }
+  
+  /* Informações do jogo */
+  .info {
+    text-align: center;
+    margin-bottom: 1rem;
+    color: #fff;
+    text-shadow: 1px 1px 2px #000;
+  }
+  
+  /* Área do tabuleiro com aparência de "container" de mar */
+  #gameBoard {
+    display: grid;
+    gap: 5px;
+    justify-content: center;
+    margin-bottom: 2rem;
+    max-width: 95vw;
+    padding: 10px;
+    background: rgba(255, 255, 255, 0.7);
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  }
+  
+  /* Células com bordas suaves e efeitos interativos */
+  .cell {
+    width: 40px;
+    height: 40px;
+    background: rgba(255, 255, 255, 0.8);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    border-radius: 4px;
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    user-select: none;
+    transition: transform 0.2s ease, background-color 0.3s ease;
+  }
+  
+  /* Efeito hover para dar sensação de profundidade */
+  .cell:hover {
+    transform: scale(1.1);
+  }
+  
+  /* Célula revelada - removendo o efeito de hover */
+  .cell.revealed {
+    background: #fff;
+    cursor: default;
+    transform: none;
+  }
+  
+  /* Animação para explosão da bomba */
+  @keyframes explosion {
+    0% {
+      transform: scale(1);
+      opacity: 1;
+    }
+    100% {
+      transform: scale(2);
+      opacity: 0;
+    }
+  }
+  
+  /* Classe para ativar a animação de explosão */
+  .cell.exploded {
+    animation: explosion 0.5s ease-out;
+  }
+  
+  /* Rodapé fixo e estilizado */
+  footer {
+    background: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    width: 100%;
+    text-align: center;
+    padding: 1rem;
+    position: fixed;
+    bottom: 0;
+  }
+  
+  /* Responsividade para dispositivos móveis */
+  @media (max-width: 600px) {
+    .cell {
+      width: 30px;
+      height: 30px;
+      font-size: 1rem;
+    }
+    .controls select,
+    .controls button {
+      font-size: 0.9rem;
+      padding: 0.4rem;
+    }
+  }
+  
